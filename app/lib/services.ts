@@ -141,7 +141,7 @@ export const SERVICES: Service[] = [
       '“Totally, totally pleased and happy with the final results of my full kitchen remodel and my master bathroom remodel.”',
     testimonialAvatar: '/Elba T.jpg',
     serviceName: BATHROOM_SERVICE_NAME,
-    crewPhoto: { src: '/crew2.jpg', alt: 'E&E Home Remodeling crew' },
+    crewPhoto: { src: '/about.jpg', alt: 'E&E Home Remodeling crew' },
   },
   {
     slug: 'kitchen',
@@ -205,7 +205,7 @@ export const SERVICES: Service[] = [
       '“I cannot say enough about the quality, timely manner, communication and organization Ezra\'s crew provided in our project”',
     testimonialAvatar: '/review1 (Noam N.).jpg',
     serviceName: 'Kitchen Remodel',
-    crewPhoto: { src: '/crew2.jpg', alt: 'E&E Home Remodeling crew' },
+    crewPhoto: { src: '/about.jpg', alt: 'E&E Home Remodeling crew' },
   },
   {
     slug: 'landscaping',
@@ -269,7 +269,7 @@ export const SERVICES: Service[] = [
       "\u201cTheir crew was on time, professional and punctual. We can't express how thrilled we are with the results. !\u201d",
     testimonialAvatar: '/IDA A.jpg',
     serviceName: 'Landscaping',
-    crewPhoto: { src: '/crew2.jpg', alt: 'E&E Home Remodeling crew' },
+    crewPhoto: { src: '/about.jpg', alt: 'E&E Home Remodeling crew' },
   },
   {
     slug: 'adu',
@@ -281,7 +281,7 @@ export const SERVICES: Service[] = [
     heroSubtitle: 'Get a free 3D design for your ADU or garage conversion.',
     heroH1: 'FREE 3D DESIGN',
     heroH2: 'Get a free 3D design for your remodel.',
-    heroImage: '/adu/o.jpg',
+    heroImage: '/adu/a5o.jpg',
     heroImageAlt: 'ADU & garage conversion project by E&E Home Remodeling',
     heroFlag: 'GET A FREE 3D DESIGN',
     ariaLabel: 'ADU & garage conversion Ventura & Santa Barbara, free quote',
@@ -333,7 +333,7 @@ export const SERVICES: Service[] = [
       '“Ezra with E&E home remodeling did a fantastic job that was way over our expectations with our kitchen & Bathroom remodel project!”',
     testimonialAvatar: '/John R.jpg',
     serviceName: 'ADU / Garage Conversion',
-    crewPhoto: { src: '/crew2.jpg', alt: 'E&E Home Remodeling crew' },
+    crewPhoto: { src: '/about.jpg', alt: 'E&E Home Remodeling crew' },
   },
   {
     slug: 'whole-home',
@@ -397,7 +397,7 @@ export const SERVICES: Service[] = [
       '“I have to say these guys really nailed it. They were polite and cleaned up before they left.”',
     testimonialAvatar: '/Rita L.jpg',
     serviceName: 'Whole-Home Remodel',
-    crewPhoto: { src: '/crew2.jpg', alt: 'E&E Home Remodeling crew' },
+    crewPhoto: { src: '/about.jpg', alt: 'E&E Home Remodeling crew' },
   },
 ];
 

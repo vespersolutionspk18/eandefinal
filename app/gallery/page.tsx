@@ -10,13 +10,12 @@ export const metadata: Metadata = {
     'Kitchen, bathroom, ADU, outdoor, and whole-home remodeling projects across Santa Barbara, Ventura, and Los Angeles.',
 };
 
-const PROJECTS = [
-  { slug: 'de-la-osa-woodland-hills', title: 'De La Osa Remodel', img: '/projects/de-la-osa/img1.jpg', cat: 'Whole-Home' },
-  { slug: 'las-cruces-st-ventura', title: 'Las Cruces Street Remodel', img: '/projects/las-cruces/l1.jpg', cat: 'Room Addition' },
-  { slug: 'villawood-cir-calabasas', title: 'Villawood Circle Remodel', img: '/projects/villawood/v1.jpg', cat: 'Garage' },
-  { slug: 'kitchen-project', title: 'Kitchen Remodel', img: '/kitchen/projects/k1.jpeg', cat: 'Kitchen' },
-  { slug: 'bathroom-project', title: 'Bathroom Remodel', img: '/bathroom/projects/b1.jpeg', cat: 'Bathroom' },
-  { slug: 'outdoor-project', title: 'Outdoor Remodel', img: '/outdoor-projects/o1.jpg', cat: 'Outdoor' },
+const BENTO = [
+  { href: '/whole-house-remodeling', label: 'Whole House Remodel', img: '/bento/whole-house.jpeg' },
+  { href: '/kitchen-remodeling', label: 'Kitchen Remodeling', img: '/bento/kitchen.jpeg' },
+  { href: '/bathroom-remodeling', label: 'Bathroom Remodeling', img: '/bento/bathroom.jpg' },
+  { href: '/projects/las-cruces-st-ventura', label: 'Room Addition', img: '/bento/room-addition.jpg' },
+  { href: '/remodel-villawood-cir--calabasas', label: 'Outdoor Remodeling Calabasas CA', img: '/bento/outdoor-calabasas.jpg' },
 ] as const;
 
 const VIDEOS = [
@@ -69,24 +68,29 @@ export default function GalleryPage() {
 
       <section className="sec" style={{ background: 'var(--paper)' }}>
         <div className="wrap">
-          <div className="review-headline">
-            <div>
-              <h2 className="h2" id="gallery-projects">Recent Projects</h2>
-            </div>
-          </div>
-          <div className="gallery-grid">
-            {PROJECTS.map((p) => (
-              <Link className="gallery-tile" key={p.slug} href={`/projects/${p.slug}`}>
-                <Image
-                  alt={p.title}
-                  fill
-                  loading="lazy"
-                  sizes="(max-width: 760px) 50vw, 25vw"
-                  src={p.img}
-                />
-                <span className="gallery-tile-label">{p.cat}</span>
-              </Link>
-            ))}
+          <h2 className="gal-bento-title" id="gallery-projects">
+            <em>Featured</em> <strong>Photo Galleries</strong> <em>&amp;</em> <strong>Ideas</strong>
+          </h2>
+          <div className="gal-bento">
+            {BENTO.map((p, i) => {
+              const isTall = i === BENTO.length - 1;
+              return (
+                <Link
+                  className={`bento-tile${isTall ? ' bento-tile--tall' : ''}`}
+                  key={p.href}
+                  href={p.href}
+                >
+                  <Image
+                    alt={p.label}
+                    fill
+                    loading="lazy"
+                    sizes={isTall ? '(max-width: 760px) 100vw, 35vw' : '(max-width: 760px) 50vw, 30vw'}
+                    src={p.img}
+                  />
+                  <span className="bento-tile-label">{p.label}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
