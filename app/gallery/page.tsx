@@ -32,39 +32,6 @@ const VIDEOS = [
   { id: 'R1B-EIt7cuk', name: 'Transformation', place: '' },
 ] as const;
 
-const TESTIMONIALS = [
-  {
-    name: 'Michael',
-    place: 'Calabasas',
-    text: '“I chose Ezra because of the highly rated Angie\u2019s List recommendation that granted given and I\u2019m extremely happy with the work. The color is just what I wanted. The workmanship was excellent.”',
-  },
-  {
-    name: 'Susan',
-    place: 'Santa Clarita',
-    text: '“It\u2019s just like I said — if I had this to do all over again, there\u2019s absolutely nothing I would change, beginning to end. Starting with the first conversation, he would not let me back down, he promised me what I would get and he delivered.”',
-  },
-  {
-    name: 'Tom',
-    place: 'Moorpark',
-    text: '“This is a great job. Going to see Ezra and Ron hooked me up with this beautiful work. We had this incredible vision that only those guys could have pulled off.”',
-  },
-  {
-    name: 'Lazar',
-    place: 'Burbank',
-    text: '“The work they did was just beautiful. I\u2019m sure that they\u2019re going to be able to walk you around and show you what they did, but the addition looks like it was part of the house forever.”',
-  },
-  {
-    name: 'Neil',
-    place: 'Camarillo',
-    text: '“Hi, this is Neil from Camarillo. I just want to let everybody know that Ezra worked in the house, did some upgrades. Fantastic. I\u2019m so happy with it. I don\u2019t know what to tell you — even my wife is happy.”',
-  },
-  {
-    name: 'Marlin',
-    place: 'Thousand Oaks',
-    text: '“I\u2019m very happy with the work here and everything looks perfect — patio cover and the lanai. This was a big job, but they did it very quickly and took care of everything. When he left here, it was nice and clean.”',
-  },
-] as const;
-
 export default function GalleryPage() {
   return (
     <PageShell active="gallery">
@@ -95,32 +62,6 @@ export default function GalleryPage() {
                   {v.place ? ` · ${v.place}` : ''}
                 </figcaption>
               </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="review-sec" style={{ background: 'var(--mist)' }}>
-        <div className="wrap">
-          <div className="review-headline">
-            <div>
-              <h2 className="h2" id="gallery-testimonials">What Clients Say</h2>
-            </div>
-          </div>
-          <div className="rev-grid">
-            {TESTIMONIALS.map((r) => (
-              <article className="rev-card" key={r.name}>
-                <div className="rev-head">
-                  <div className="rev-avatar">
-                    <span>{r.name.charAt(0)}</span>
-                  </div>
-                  <div className="rev-meta">
-                    <p className="rev-by">{r.name}</p>
-                    <p className="rev-place">{r.place}</p>
-                  </div>
-                </div>
-                <p className="rev-text">{r.text}</p>
-              </article>
             ))}
           </div>
         </div>
