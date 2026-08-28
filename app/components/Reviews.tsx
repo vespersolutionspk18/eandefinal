@@ -1,4 +1,5 @@
 import ReviewAvatar from './ReviewAvatar';
+import YouTubeFacade from './YouTubeFacade';
 
 type Review = {
   initial: string;
@@ -116,13 +117,9 @@ export default function Reviews({ showVideos = false }: { showVideos?: boolean }
           <div className="vt-grid">
             {VIDEO_TESTIMONIALS.map((v) => (
               <figure className="vt-card" key={v.id}>
-                <iframe
-                  src={`https://www.youtube.com/embed/${v.id}?rel=0&playsinline=1`}
+                <YouTubeFacade
+                  id={v.id}
                   title={`Video testimonial from ${v.name} in ${v.place}`}
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                  referrerPolicy="strict-origin-when-cross-origin"
                 />
                 <figcaption className="vt-cap">
                   <strong>{v.name}</strong> · {v.place}

@@ -2771,6 +2771,59 @@ video {
   background: #000;
 }
 
+.vt-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: #000;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.vt-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .3s ease;
+}
+
+.vt-thumb:hover img {
+  transform: scale(1.04);
+}
+
+.vt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-radius: 50%;
+  background: rgba(17, 159, 201, .92);
+  box-shadow: 0 6px 18px rgba(17, 159, 201, .45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.vt-thumb:hover .vt-play {
+  transform: scale(1.08);
+  background: #119FC9;
+}
+
+.vt-play svg {
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  margin-left: 3px;
+}
+
 .vt-cap {
   margin-top: 8px;
   font-size: 13.5px;
