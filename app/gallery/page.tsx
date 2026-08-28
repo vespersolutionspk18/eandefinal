@@ -20,25 +20,49 @@ const PROJECTS = [
 ] as const;
 
 const VIDEOS = [
-  { id: '0N61rpr-Ujc', name: 'Michael', place: 'Calabasas' },
-  { id: 'cG1DByNcoNk', name: 'Susan', place: 'Santa Clarita' },
+  { id: 'cG1DByNcoNk', name: 'Michael', place: 'Calabasas' },
+  { id: 'h8vP0XyMHww', name: 'Susan', place: 'Santa Clarita' },
   { id: 'cTp80R6Xt1Y', name: 'Tom', place: 'Moorpark' },
-  { id: 'Fmvus30M3Mo', name: 'Feature Project', place: '' },
-  { id: 'h8vP0XyMHww', name: 'Neil', place: 'Camarillo' },
-  { id: 'jERreCLH8c4', name: 'Feature Project', place: '' },
   { id: 'pUZiBB6dxHk', name: 'Lazar', place: 'Burbank' },
-  { id: 'R1B-EIt7cuk', name: 'Feature Project', place: '' },
   { id: 'VqLbI0dtd5k', name: 'Neil', place: 'Camarillo' },
   { id: 'X0YNR38myPU', name: 'Marlin', place: 'Thousand Oaks' },
+  { id: 'Fmvus30M3Mo', name: 'Transformation', place: '' },
+  { id: '0N61rpr-Ujc', name: 'Transformation', place: '' },
+  { id: 'jERreCLH8c4', name: 'Transformation', place: '' },
+  { id: 'R1B-EIt7cuk', name: 'Transformation', place: '' },
 ] as const;
 
 const TESTIMONIALS = [
-  { name: 'Michael', place: 'Calabasas', text: '“Best contractors we have used. They remodeled our entire house and the result was amazing. Highly recommend Ezra and his team.”' },
-  { name: 'Susan', place: 'Santa Clarita', text: '“They did an excellent job on our kitchen remodel. The team was professional, polite, and finished on schedule. We love our new kitchen!”' },
-  { name: 'Tom', place: 'Moorpark', text: '“Very happy with the quality of work. Ezra and his crew transformed our home. Clean, on time, and beautiful results.”' },
-  { name: 'Lazar', place: 'Burbank', text: '“Professional, courteous, and great quality work. Highly recommend E&E for any remodeling project.”' },
-  { name: 'Neil', place: 'Camarillo', text: '“They converted our garage into a beautiful ADU. The whole process was smooth and the finish is excellent.”' },
-  { name: 'Marlin', place: 'Thousand Oaks', text: '“Fantastic job on our bathroom remodel. Detail-oriented, clean, and the results speak for themselves.”' },
+  {
+    name: 'Michael',
+    place: 'Calabasas',
+    text: '“I chose Ezra because of the highly rated Angie\u2019s List recommendation that granted given and I\u2019m extremely happy with the work. The color is just what I wanted. The workmanship was excellent.”',
+  },
+  {
+    name: 'Susan',
+    place: 'Santa Clarita',
+    text: '“It\u2019s just like I said — if I had this to do all over again, there\u2019s absolutely nothing I would change, beginning to end. Starting with the first conversation, he would not let me back down, he promised me what I would get and he delivered.”',
+  },
+  {
+    name: 'Tom',
+    place: 'Moorpark',
+    text: '“This is a great job. Going to see Ezra and Ron hooked me up with this beautiful work. We had this incredible vision that only those guys could have pulled off.”',
+  },
+  {
+    name: 'Lazar',
+    place: 'Burbank',
+    text: '“The work they did was just beautiful. I\u2019m sure that they\u2019re going to be able to walk you around and show you what they did, but the addition looks like it was part of the house forever.”',
+  },
+  {
+    name: 'Neil',
+    place: 'Camarillo',
+    text: '“Hi, this is Neil from Camarillo. I just want to let everybody know that Ezra worked in the house, did some upgrades. Fantastic. I\u2019m so happy with it. I don\u2019t know what to tell you — even my wife is happy.”',
+  },
+  {
+    name: 'Marlin',
+    place: 'Thousand Oaks',
+    text: '“I\u2019m very happy with the work here and everything looks perfect — patio cover and the lanai. This was a big job, but they did it very quickly and took care of everything. When he left here, it was nice and clean.”',
+  },
 ] as const;
 
 export default function GalleryPage() {
