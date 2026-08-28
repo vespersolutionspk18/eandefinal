@@ -1,117 +1,130 @@
-'use client';
-
-import { useMemo, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import PageShell from '../components/PageShell';
+import YouTubeFacade from '../components/YouTubeFacade';
+import type { Metadata } from 'next';
 
-type Tile = { src: string; alt: string; cap: string; category: string };
+export const metadata: Metadata = {
+  title: 'Project Gallery | E&E Home Remodeling',
+  description:
+    'Kitchen, bathroom, ADU, outdoor, and whole-home remodeling projects across Santa Barbara, Ventura, and Los Angeles.',
+};
 
-const CATEGORIES = ['All', 'Bathroom', 'Kitchen', 'Landscaping', 'Whole-Home'] as const;
+const PROJECTS = [
+  { slug: 'de-la-osa-woodland-hills', title: 'De La Osa Remodel', img: '/projects/de-la-osa/img1.jpg', cat: 'Whole-Home' },
+  { slug: 'las-cruces-st-ventura', title: 'Las Cruces Street Remodel', img: '/projects/las-cruces/l1.jpg', cat: 'Room Addition' },
+  { slug: 'villawood-cir-calabasas', title: 'Villawood Circle Remodel', img: '/projects/villawood/v1.jpg', cat: 'Garage' },
+  { slug: 'kitchen-project', title: 'Kitchen Remodel', img: '/kitchen/projects/k1.jpeg', cat: 'Kitchen' },
+  { slug: 'bathroom-project', title: 'Bathroom Remodel', img: '/bathroom/projects/b1.jpeg', cat: 'Bathroom' },
+  { slug: 'outdoor-project', title: 'Outdoor Remodel', img: '/outdoor-projects/o1.jpg', cat: 'Outdoor' },
+] as const;
 
-const TILES: Tile[] = [
-  { src: '/bathroom/mains/1.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/2.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/3.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/4.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/5.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/6.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/7.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/8.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/mains/9.jpg', alt: 'Bathroom remodel', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/2a.jpg', alt: 'Bathroom project', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/2.jpg', alt: 'Bathroom project', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/bathroom/4a.jpg', alt: 'Bathroom project', cap: 'Bathroom Remodel', category: 'Bathroom' },
-  { src: '/kitchen/2o.jpg', alt: 'Kitchen remodel', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/kitchen/1o.jpg', alt: 'Kitchen remodel', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/kitchen/2a.jpg', alt: 'Kitchen project', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/kitchen/2b.jpg', alt: 'Kitchen project', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/kitchen/2c.jpg', alt: 'Kitchen project', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/kitchen/o.jpg', alt: 'Kitchen project', cap: 'Kitchen Remodel', category: 'Kitchen' },
-  { src: '/landscaping/1.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-  { src: '/landscaping/1a.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-  { src: '/landscaping/1c.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-  { src: '/landscaping/1d.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-  { src: '/landscaping/b1.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-  { src: '/landscaping/b2.jpg', alt: 'Landscaping project', cap: 'Landscaping', category: 'Landscaping' },
-];
+const VIDEOS = [
+  { id: '0N61rpr-Ujc', name: 'Michael', place: 'Calabasas' },
+  { id: 'cG1DByNcoNk', name: 'Susan', place: 'Santa Clarita' },
+  { id: 'cTp80R6Xt1Y', name: 'Tom', place: 'Moorpark' },
+  { id: 'Fmvus30M3Mo', name: 'Feature Project', place: '' },
+  { id: 'h8vP0XyMHww', name: 'Neil', place: 'Camarillo' },
+  { id: 'jERreCLH8c4', name: 'Feature Project', place: '' },
+  { id: 'pUZiBB6dxHk', name: 'Lazar', place: 'Burbank' },
+  { id: 'R1B-EIt7cuk', name: 'Feature Project', place: '' },
+  { id: 'VqLbI0dtd5k', name: 'Neil', place: 'Camarillo' },
+  { id: 'X0YNR38myPU', name: 'Marlin', place: 'Thousand Oaks' },
+] as const;
+
+const TESTIMONIALS = [
+  { name: 'Michael', place: 'Calabasas', text: '“Best contractors we have used. They remodeled our entire house and the result was amazing. Highly recommend Ezra and his team.”' },
+  { name: 'Susan', place: 'Santa Clarita', text: '“They did an excellent job on our kitchen remodel. The team was professional, polite, and finished on schedule. We love our new kitchen!”' },
+  { name: 'Tom', place: 'Moorpark', text: '“Very happy with the quality of work. Ezra and his crew transformed our home. Clean, on time, and beautiful results.”' },
+  { name: 'Lazar', place: 'Burbank', text: '“Professional, courteous, and great quality work. Highly recommend E&E for any remodeling project.”' },
+  { name: 'Neil', place: 'Camarillo', text: '“They converted our garage into a beautiful ADU. The whole process was smooth and the finish is excellent.”' },
+  { name: 'Marlin', place: 'Thousand Oaks', text: '“Fantastic job on our bathroom remodel. Detail-oriented, clean, and the results speak for themselves.”' },
+] as const;
 
 export default function GalleryPage() {
-  const [active, setActive] = useState<(typeof CATEGORIES)[number]>('All');
-  const [open, setOpen] = useState<{ src: string; alt: string; cap: string } | null>(null);
-
-  const filtered = useMemo(() => {
-    if (active === 'All') return TILES;
-    return TILES.filter((t) => t.category === active);
-  }, [active]);
-
   return (
     <PageShell active="gallery">
       <section className="page-banner">
         <div className="wrap">
           <span className="page-banner-kicker">Project Gallery</span>
-          <h1>Recent Work</h1>
+          <h1>Featured Projects</h1>
           <p>
-            Bathroom, kitchen, ADU, landscaping, and whole-home projects across Ventura, Santa
-            Barbara, Los Angeles, and the San Fernando Valley.
+            Real kitchens, bathrooms, garages, and whole homes — remodeled across Santa Barbara,
+            Ventura, and Los Angeles.
           </p>
         </div>
       </section>
-      <section className="sec" style={{ background: 'var(--mist)' }}>
+
+      <section className="review-sec" style={{ background: 'var(--paper)' }}>
         <div className="wrap">
-          <div className="gallery-filter" role="tablist">
-            {CATEGORIES.map((c) => (
-              <button
-                aria-pressed={active === c}
-                className={active === c ? 'is-active' : ''}
-                key={c}
-                onClick={() => setActive(c)}
-                type="button"
-              >
-                {c}
-              </button>
-            ))}
+          <div className="review-headline">
+            <div>
+              <h2 className="h2" id="gallery-videos">Featured Videos</h2>
+            </div>
           </div>
-          <div className="gallery-grid">
-            {filtered.map((tile) => (
-              <button
-                aria-label={`Open ${tile.cap}`}
-                className="gallery-tile"
-                key={tile.src}
-                type="button"
-                onClick={() => setOpen(tile)}
-              >
-                <Image alt={tile.alt} fill loading="lazy" sizes="(max-width: 760px) 50vw, 25vw" src={tile.src} />
-                <span className="gallery-tile-label">{tile.category}</span>
-              </button>
+          <div className="vt-grid">
+            {VIDEOS.map((v) => (
+              <figure className="vt-card" key={v.id}>
+                <YouTubeFacade id={v.id} title={`Video: ${v.name}`} />
+                <figcaption className="vt-cap">
+                  <strong>{v.name}</strong>
+                  {v.place ? ` · ${v.place}` : ''}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
-      {open && (
-        <div
-          aria-label="Photo viewer"
-          aria-modal="true"
-          className="lb on"
-          role="dialog"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) setOpen(null);
-          }}
-        >
-          <button
-            aria-label="Close photo viewer"
-            className="lb-x"
-            type="button"
-            onClick={() => setOpen(null)}
-          >
-            <svg fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path d="M18 6 6 18M6 6l12 12" />
-            </svg>
-          </button>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img alt={open.alt} src={open.src} />
-          <p className="lb-cap">{open.cap}</p>
+
+      <section className="review-sec" style={{ background: 'var(--mist)' }}>
+        <div className="wrap">
+          <div className="review-headline">
+            <div>
+              <h2 className="h2" id="gallery-testimonials">What Clients Say</h2>
+            </div>
+          </div>
+          <div className="rev-grid">
+            {TESTIMONIALS.map((r) => (
+              <article className="rev-card" key={r.name}>
+                <div className="rev-head">
+                  <div className="rev-avatar">
+                    <span>{r.name.charAt(0)}</span>
+                  </div>
+                  <div className="rev-meta">
+                    <p className="rev-by">{r.name}</p>
+                    <p className="rev-place">{r.place}</p>
+                  </div>
+                </div>
+                <p className="rev-text">{r.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
-      )}
+      </section>
+
+      <section className="sec" style={{ background: 'var(--paper)' }}>
+        <div className="wrap">
+          <div className="review-headline">
+            <div>
+              <h2 className="h2" id="gallery-projects">Recent Projects</h2>
+            </div>
+          </div>
+          <div className="gallery-grid">
+            {PROJECTS.map((p) => (
+              <Link className="gallery-tile" key={p.slug} href={`/projects/${p.slug}`}>
+                <Image
+                  alt={p.title}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 760px) 50vw, 25vw"
+                  src={p.img}
+                />
+                <span className="gallery-tile-label">{p.cat}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }

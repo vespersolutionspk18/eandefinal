@@ -38,29 +38,41 @@ function CardIcon() {
   );
 }
 
+function StarIcon() {
+  return (
+    <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01Z" />
+    </svg>
+  );
+}
+
 export default function TrustStrip() {
   return (
     <div aria-label="E&E credentials" className="trust" role="list">
       <div className="wrap trust-in">
         <span className="trust-item" role="listitem">
           <ShieldIcon />
-          25+ Years Experience
-        </span>
-        <span className="trust-item" role="listitem">
-          <PersonIcon />
-          Family Owned
+          Licensed &amp; Insured · CA #1087571
         </span>
         <span className="trust-item" role="listitem">
           <CheckIcon />
-          Licensed &amp; Insured
+          25+ Years · Same Family
+        </span>
+        <span className="trust-item" role="listitem">
+          <PersonIcon />
+          Family Owned &amp; Operated
         </span>
         <span className="trust-item" role="listitem">
           <BoxIcon />
           Free 3D Design
         </span>
         <span className="trust-item" role="listitem">
+          <StarIcon />
+          4.7★ on Yelp · 77 Reviews
+        </span>
+        <span className="trust-item" role="listitem">
           <CardIcon />
-          Low Interest Financing
+          Financing Available
         </span>
       </div>
     </div>

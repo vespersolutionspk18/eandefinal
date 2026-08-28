@@ -10,9 +10,9 @@ import { PHONE_NUMBER, PHONE_DISPLAY } from './lib/analytics';
 import { SERVICES } from './lib/services';
 
 export const metadata: Metadata = {
-  title: 'E&E Home Remodeling | Kitchen, Bath, ADU & Whole-Home Remodeling',
+  title: 'E&E Home Remodeling | Santa Barbara Kitchen, Bath, ADU & Whole-Home Remodels',
   description:
-    'Family-owned for 25+ years. Kitchen, bathroom, ADU, garage conversion, landscaping, and whole-home remodeling across Ventura, Santa Barbara, Los Angeles, and the San Fernando Valley. Free 3D design. CA Lic #1087571.',
+    'Family-owned for over 25 years. Kitchens, bathrooms, ADUs, landscaping, and whole-home remodels in Santa Barbara, Ventura, and Los Angeles. Free consultation and 3D design. CA Lic #1087571.',
 };
 
 function ArrowIcon() {
@@ -34,19 +34,19 @@ function CheckIcon() {
 const PROCESS_STEPS = [
   {
     title: 'Free Consultation',
-    body: 'Walk us through your space, your goals, and your budget. We will tell you what is realistic before you commit to anything.',
+    body: 'We visit your home, listen carefully, and discuss what you have in mind. No cost, no obligation.',
   },
   {
     title: 'Free 3D Design',
-    body: 'See your actual space in 3D — layout, tile, cabinetry, fixtures — and change anything before construction starts.',
+    body: 'You see exactly how your home will look — and change anything you like — before work begins.',
   },
   {
-    title: 'Permits & Schedule',
-    body: 'We pull the permits, order materials, and hand you a written timeline so you can plan around the work.',
+    title: 'A Clear Plan',
+    body: 'You receive a written schedule and a written price. Everything is in writing.',
   },
   {
-    title: 'Build & Walkthrough',
-    body: 'The same crew that drew your design builds the project, protects your home, and walks you through the finish.',
+    title: 'The Work',
+    body: 'Our own crew completes your project, keeps your home clean and comfortable, and walks through every detail with you at the end.',
   },
 ];
 
@@ -54,7 +54,7 @@ const STATS = [
   { num: '25+', label: 'Years Remodeling' },
   { num: '500+', label: 'Projects Completed' },
   { num: '4.7', label: 'Yelp Rating · 77 Reviews' },
-  { num: '1', label: 'Team From Design To Build' },
+  { num: '2', label: 'Best of Houzz Awards — 2023 & 2024' },
 ];
 
 export default function Home() {
@@ -72,23 +72,23 @@ export default function Home() {
           />
         </div>
         <div className="home-hero-copy">
-          <span className="home-hero-eyebrow">Family Owned · 25+ Years</span>
+          <span className="home-hero-eyebrow">Family Owned &amp; Operated · Licensed CA #1087571 · 25+ Years</span>
           <h1 className="home-hero-h1">
-            Designed In 3D.
+            A Beautiful Remodel,
             <br />
-            Built By One Team.
+            From People You Can Trust
           </h1>
           <p className="home-hero-h2">
-            Kitchens, bathrooms, ADUs, and whole-home remodels across Ventura, Santa Barbara, and
-            Los Angeles — designed, permitted, and built by the same crew. Free 3D design on every
-            project.
+            We design your kitchen, bathroom, or whole home in 3D before any work begins, give you
+            a clear written price, and our own experienced crew does the work from start to finish.
+            Serving Santa Barbara, Ventura, and Los Angeles for over 25 years.
           </p>
           <div className="home-hero-actions">
-            <a className="btn btn-primary" href="#quote">
-              GET A FREE QUOTE
-            </a>
-            <a className="btn btn-call" href={`tel:${PHONE_NUMBER}`}>
+            <a className="btn btn-primary" href={`tel:${PHONE_NUMBER}`}>
               CALL {PHONE_DISPLAY}
+            </a>
+            <a className="btn btn-call" href="#quote">
+              REQUEST A FREE CONSULTATION
             </a>
           </div>
           <div className="home-hero-services">
@@ -107,11 +107,12 @@ export default function Home() {
       <section className="sec" style={{ background: 'var(--paper)' }}>
         <div className="wrap">
           <header className="shead">
-            <span className="wcy-kicker">What We Build</span>
-            <h2 className="h2">Our Services</h2>
+            <span className="wcy-kicker">Our Services</span>
+            <h2 className="h2">One Company. One Number. One Crew.</h2>
             <p className="lead">
-              Five specialties, one team. Every project starts with a free 3D design so you can see
-              the result before we build it.
+              Kitchens, bathrooms, ADUs, landscaping, and whole-home remodels. Every project begins
+              with a free consultation and a free 3D design, so you see your finished home before
+              any work begins.
             </p>
           </header>
           <div className="svc-overview">
@@ -130,7 +131,7 @@ export default function Home() {
               href="/gallery"
               kicker="Portfolio"
               title="Project Gallery"
-              body="Bathroom, kitchen, ADU, and whole-home projects across Santa Barbara, Ventura, and the San Fernando Valley."
+              body="Recent projects from homes in your neighborhoods."
               image="/bathroom/mains/4.jpg"
               alt="Project Gallery"
             />
@@ -142,10 +143,8 @@ export default function Home() {
         <div className="wrap">
           <header className="shead">
             <span className="wcy-kicker">How It Works</span>
-            <h2 className="h2">From First Call To Final Walkthrough</h2>
-            <p className="lead">
-              A clear, four-step process. You always know what happens next — and what it costs.
-            </p>
+            <h2 className="h2">Simple and Straightforward</h2>
+            <p className="lead">Four steps, and we handle the details at every one.</p>
           </header>
           <div className="proc-grid">
             {PROCESS_STEPS.map((step, i) => (
@@ -179,32 +178,31 @@ export default function Home() {
         <div className="wrap">
           <div className="about-hero">
             <div className="about-hero-photo" style={{ borderColor: 'rgba(255,255,255,.18)' }}>
-              <Image alt="E&E Home Remodeling crew" fill sizes="(max-width: 980px) 100vw, 40vw" src="/crew2.jpg" />
+              <Image alt="The E&E Home Remodeling family team" fill sizes="(max-width: 980px) 100vw, 40vw" src="/about.jpg" />
             </div>
             <div className="about-hero-copy">
-              <span className="wcy-kicker">Why E&E</span>
-              <h1 style={{ color: '#fff' }}>One Team From The First Walkthrough To The Final One</h1>
+              <span className="wcy-kicker">Why Homeowners Choose E&E</span>
+              <h1 style={{ color: '#fff' }}>A Family Business That Treats Your Home Like Our Own</h1>
               <ul className="chk">
                 <li>
                   <CheckIcon />
-                  The designers who draw your 3D plan are in the room with the builders every week.
+                  You&apos;ll work with the same courteous crew from start to finish — people who know your name and your home.
                 </li>
                 <li>
                   <CheckIcon />
-                  Written schedules and transparent pricing — no handoffs, no surprise change orders.
+                  Your price and your schedule, in writing, before we begin.
                 </li>
                 <li>
                   <CheckIcon />
-                  We protect your home, keep the site clean, and treat your family like neighbors —
-                  because you probably are.
+                  We treat your home with care — clean job sites, tidy work, and a full cleanup every day.
                 </li>
               </ul>
               <div className="wcy-cta" style={{ justifyContent: 'flex-start', marginTop: 8 }}>
-                <a className="btn btn-primary" href="#quote">
-                  GET A FREE QUOTE
-                </a>
-                <a className="btn btn-call" href={`tel:${PHONE_NUMBER}`}>
+                <a className="btn btn-primary" href={`tel:${PHONE_NUMBER}`}>
                   CALL {PHONE_DISPLAY}
+                </a>
+                <a className="btn btn-call" href="#quote">
+                  REQUEST A FREE CONSULTATION
                 </a>
               </div>
             </div>
@@ -217,9 +215,9 @@ export default function Home() {
       <section className="sec gal-sec" style={{ background: 'var(--paper)' }}>
         <div className="wrap">
           <header className="shead center">
-            <span className="wcy-kicker">Recent Projects</span>
-            <h2 className="h2">Work We&apos;re Proud Of</h2>
-            <p className="lead">A small sample of recent bathroom, kitchen, ADU, and landscaping projects across Ventura, Santa Barbara, Los Angeles, and the San Fernando Valley.</p>
+            <span className="wcy-kicker">Our Recent Work</span>
+            <h2 className="h2">Recent Projects</h2>
+            <p className="lead">A selection of kitchen, bathroom, ADU, and landscaping projects completed for homes in Santa Barbara, Ventura, and Los Angeles.</p>
           </header>
           <div className="gal" style={{ maxWidth: 1380 }}>
             {[
@@ -245,8 +243,8 @@ export default function Home() {
       <span id="quote" />
 
       <FinalLead
-        title="Get Your Free 3D Design"
-        subtitle="Tell us about your project. We&apos;ll contact you to discuss your goals, create your free 3D design, and walk you through financing options if needed."
+        title="Request Your Free Consultation"
+        subtitle="Tell us a little about your project. We&apos;ll call you to set up a convenient time to meet, answer every question, and prepare your free 3D design. There is never any obligation."
         formTitle="GET YOUR FREE 3D DESIGN"
         formId="home-final"
         serviceName="Home Remodel Inquiry"

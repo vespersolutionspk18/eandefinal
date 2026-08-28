@@ -46,7 +46,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="about-hero-photo">
-              <Image alt="E&E Home Remodeling crew" fill sizes="(max-width: 980px) 100vw, 40vw" src="/crew2.jpg" />
+              <Image alt="The E&E Home Remodeling family team" fill sizes="(max-width: 980px) 100vw, 40vw" src="/about.jpg" />
             </div>
           </div>
         </div>

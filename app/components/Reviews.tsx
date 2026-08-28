@@ -104,13 +104,13 @@ export default function Reviews({ showVideos = false }: { showVideos?: boolean }
       <div className="wrap">
         <div className="review-headline">
           <div>
-            <h2 className="h2" id="rev-h">HOMEOWNERS LOVE US</h2>
+            <h2 className="h2" id="rev-h">What Our Clients Say</h2>
           </div>
           <span
             aria-label="4.7 on Yelp, 77 reviews"
             className="review-yelp"
           >
-            ★★★★★ 4.7 ON YELP · 77 REVIEWS
+            ★★★★★ 4.7 on Yelp · 77 Reviews
           </span>
         </div>
         {showVideos && (
@@ -138,8 +138,7 @@ export default function Reviews({ showVideos = false }: { showVideos?: boolean }
             <span className="houzz-proof-kicker">HOUZZ RECOGNITION</span>
             <h3>Recognized on Houzz</h3>
             <p>
-              Best of Houzz Service recognition for 2023 and 2024, plus Houzz profile badges that
-              reflect customer engagement with our work.
+              Best of Houzz Service for 2023 and 2024.
             </p>
           </div>
           <div className="houzz-proof-images">
