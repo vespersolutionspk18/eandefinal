@@ -103,6 +103,7 @@ function confirmSubmission(id: string, attemptsLeft: number): Promise<{ state?: 
 export default function LeadForm({ formId, withMessage, className, serviceName }: Props) {
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
 
   function readValue(form: HTMLFormElement, name: string): string {
     const el = form.querySelector<HTMLInputElement | HTMLTextAreaElement>('[name="' + name + '"]');
@@ -183,14 +184,10 @@ export default function LeadForm({ formId, withMessage, className, serviceName }
     payload.append('gbraid', params.get('gbraid') || '');
     payload.append('wbraid', params.get('wbraid') || '');
 
-    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
-    const originalText = button ? button.textContent || '' : '';
     form.dataset.submitting = 'true';
     setSending(true);
-    if (button) {
-      button.disabled = true;
-      button.textContent = window.eeT ? window.eeT('SENDING...') : 'SENDING...';
-    }
+    setSubmitted(true); // optimistic: acknowledge immediately on submit click
+    setConfirmed(false);
 
     try {
       await fetch(WEB_APP_URL, {
@@ -202,6 +199,8 @@ export default function LeadForm({ formId, withMessage, className, serviceName }
       });
       await new Promise((r) => setTimeout(r, 450));
       await confirmSubmission(id, 8);
+
+      setConfirmed(true); // backend confirmed the row was saved
 
       trackConversion('generate_lead', {
         service: SERVICE_NAME,
@@ -225,31 +224,18 @@ export default function LeadForm({ formId, withMessage, className, serviceName }
         el.removeAttribute('aria-invalid');
       });
 
-      if (button) {
-        button.textContent = window.eeT
-          ? window.eeT("THANK YOU  -  WE'LL CALL YOU SOON")
-          : "THANK YOU  -  WE'LL CALL YOU SOON";
-      }
-
-      setSubmitted(true);
-
       setTimeout(() => {
         form.dataset.submitting = 'false';
         setSending(false);
-        if (button) {
-          button.disabled = false;
-          button.textContent = originalText;
-        }
         setSubmitted(false);
+        setConfirmed(false);
       }, 5000);
     } catch (error) {
       console.error('Lead submission failed or could not be confirmed:', error);
       form.dataset.submitting = 'false';
       setSending(false);
-      if (button) {
-        button.disabled = false;
-        button.textContent = window.eeT ? window.eeT('TRY AGAIN') : 'TRY AGAIN';
-      }
+      setSubmitted(false);
+      setConfirmed(false);
       alert('We could not confirm your online submission. Please try again or call E&E at (805) 590-0908.');
     }
   }
@@ -310,6 +296,11 @@ export default function LeadForm({ formId, withMessage, className, serviceName }
           ? "THANK YOU  -  WE'LL CALL YOU SOON"
           : 'GET MY FREE 3D DESIGN'}
       </button>
+      {confirmed && (
+        <p className="f-confirm-note" role="status">
+          ✓ Your request is confirmed. We'll call you within one business day.
+        </p>
+      )}
     </form>
   );
 }
