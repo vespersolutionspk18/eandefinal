@@ -15,7 +15,7 @@ export default function CtaBand({ title, sub, ariaLabel = 'Ready to get started'
           <p className="band-sub">{sub}</p>
         </div>
         <div className="band-actions">
-          <span className="chip-3d">FREE 3D DESIGN</span>
+          <span className="chip-3d">FREE 3D DESIGN · FREE QUOTE</span>
           <a className="btn btn-primary" href="#quote">
             GET A FREE QUOTE
           </a>

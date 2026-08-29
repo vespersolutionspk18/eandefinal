@@ -14,7 +14,7 @@ const BENTO = [
   { href: '/whole-house-remodeling', label: 'Whole House Remodel', img: '/bento/whole-house.jpeg' },
   { href: '/kitchen-remodeling', label: 'Kitchen Remodeling', img: '/bento/kitchen.jpeg' },
   { href: '/bathroom-remodeling', label: 'Bathroom Remodeling', img: '/bento/bathroom.jpg' },
-  { href: '/projects/las-cruces-st-ventura', label: 'Room Addition', img: '/bento/room-addition.jpg' },
+  { href: '/', label: 'Room Addition', img: '/bento/room-addition.jpg' },
   { href: '/remodel-villawood-cir--calabasas', label: 'Outdoor Remodeling Calabasas CA', img: '/bento/outdoor-calabasas.jpg' },
 ] as const;
 

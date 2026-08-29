@@ -4349,6 +4349,7 @@ video {
 
 .gal-bento .bento-tile--tall {
   grid-row: 1 / 3;
+  grid-column: 3;
   aspect-ratio: auto;
 }
 

@@ -45,3 +45,11 @@ next-env.d.ts
 /_to_delete/
 /_unused_components/
 /_bathroom_backup/
+
+# temp scrape / extraction scripts (not part of the app)
+/_extract.cjs
+/_download.cjs
+/_gen_galleries.cjs
+/_subpage_*.html
+/_subpage-data.json
+/_extract-output.txt

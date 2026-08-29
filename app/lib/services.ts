@@ -1,4 +1,9 @@
 import { SERVICE_NAME as BATHROOM_SERVICE_NAME } from './analytics';
+import {
+  WHOLE_HOUSE_LIVE_GALLERY,
+  KITCHEN_LIVE_GALLERY,
+  BATHROOM_LIVE_GALLERY,
+} from './live-galleries';
 
 export type Service = {
   slug: 'bathroom' | 'kitchen' | 'landscaping' | 'adu' | 'whole-home';
@@ -87,11 +92,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: 'Santa Barbara Bathroom Remodeling',
     heroTitle: 'Bathroom Remodeling Santa Barbara',
     heroSubtitle: 'Get a free 3D design for your bathroom remodel.',
-    heroH1: 'FREE 3D DESIGN',
+    heroH1: 'FREE 3D DESIGN · FREE QUOTE',
     heroH2: 'Get a free 3D design for your remodel.',
     heroImage: '/bathroom/mains/4.jpg',
     heroImageAlt: 'Completed bathroom remodel by E&E Home Remodeling',
-    heroFlag: 'GET A FREE 3D DESIGN',
+    heroFlag: 'GET A FREE 3D DESIGN & FREE QUOTE',
     ariaLabel: 'Bathroom remodeling Santa Barbara, free quote',
     highlights: [
       'Free 3D design for your remodel',
@@ -110,17 +115,7 @@ export const SERVICES: Service[] = [
       { title: 'Permits & Schedule', body: 'We pull the permits, lock the schedule, and order materials. You get a clear timeline with no surprises.' },
       { title: 'Build & Walkthrough', body: 'Our crew builds the project, protects the rest of your home, and walks you through the finished space at the end.' },
     ],
-    gallery: [
-      { src: '/bathroom/mains/1.jpg', alt: 'Bathroom remodel by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/9.jpg', alt: 'Bathroom remodel detail by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/3.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/7.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/2.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/5.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/6.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/mains/4.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-      { src: '/bathroom/2a.jpg', alt: 'Bathroom project photo by E&E', cap: 'Bathroom remodel - E&E Home Remodeling' },
-    ],
+    gallery: BATHROOM_LIVE_GALLERY,
     youtubeId: YOUTUBE_ID,
     videoCaption: 'Bathroom Remodel by E&E Home Remodeling',
     ctaBandTitle: 'Start Your Bathroom Remodel',
@@ -128,7 +123,7 @@ export const SERVICES: Service[] = [
     finalLeadTitle: 'Get Your Free Bathroom 3D Design',
     finalLeadSubtitle:
       "Tell us about your bathroom. We'll contact you to discuss your project, create your free 3D design, and walk you through financing options if needed.",
-    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN',
+    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN & FREE QUOTE',
     formId: 'b',
     faqs: [
       { q: 'How long does a bathroom remodel take?', a: 'Most full bathroom remodels take 3 to 6 weeks of active construction after the design and permits are finalized. We share a written schedule before construction starts so you know what to expect.' },
@@ -151,11 +146,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: 'Santa Barbara & Ventura Kitchen Remodeling',
     heroTitle: 'Kitchen Remodeling Ventura & Santa Barbara',
     heroSubtitle: 'Get a free 3D design for your kitchen remodel.',
-    heroH1: 'FREE 3D DESIGN',
+    heroH1: 'FREE 3D DESIGN · FREE QUOTE',
     heroH2: 'Get a free 3D design for your remodel.',
     heroImage: '/kitchen/2o-v2.jpg',
     heroImageAlt: 'Completed kitchen remodel by E&E Home Remodeling',
-    heroFlag: 'GET A FREE 3D DESIGN',
+    heroFlag: 'GET A FREE 3D DESIGN & FREE QUOTE',
     ariaLabel: 'Kitchen remodeling Ventura & Santa Barbara, free quote',
     highlights: [
       'Free 3D design for your remodel',
@@ -174,17 +169,7 @@ export const SERVICES: Service[] = [
       { title: 'Permits & Schedule', body: 'We pull permits, finalize materials, and lock the schedule so you know exactly when work starts and ends.' },
       { title: 'Build & Walkthrough', body: 'Our crew builds the kitchen, protects the rest of your home, and walks you through every detail at completion.' },
     ],
-    gallery: [
-      { src: '/kitchen/2o-v2.jpg', alt: 'Kitchen remodel by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/1o.jpg', alt: 'Kitchen remodel detail by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/2a.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/2b.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/2c.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/2d.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/2e.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/o.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-      { src: '/kitchen/c1.jpg', alt: 'Kitchen project photo by E&E', cap: 'Kitchen remodel - E&E Home Remodeling' },
-    ],
+    gallery: KITCHEN_LIVE_GALLERY,
     youtubeId: YOUTUBE_ID,
     videoCaption: 'Kitchen Remodel by E&E Home Remodeling',
     ctaBandTitle: 'Start Your Kitchen Remodel',
@@ -192,7 +177,7 @@ export const SERVICES: Service[] = [
     finalLeadTitle: 'Get Your Free Kitchen 3D Design',
     finalLeadSubtitle:
       "Tell us about your kitchen. We'll contact you to discuss your project, create your free 3D design, and walk you through financing options if needed.",
-    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN',
+    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN & FREE QUOTE',
     formId: 'k',
     faqs: [
       { q: 'How long does a kitchen remodel take?', a: 'A typical full kitchen remodel runs 6 to 10 weeks of active construction after design and permits. We give you a written schedule up front so you can plan around it.' },
@@ -215,11 +200,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: 'Santa Barbara & Ventura Landscaping',
     heroTitle: 'Landscaping Ventura & Santa Barbara',
     heroSubtitle: 'Get a free 3D design for your yard.',
-    heroH1: 'FREE 3D DESIGN',
+    heroH1: 'FREE 3D DESIGN · FREE QUOTE',
     heroH2: 'Get a free 3D design for your remodel.',
     heroImage: '/landscaping/1.jpg',
     heroImageAlt: 'Landscaping project by E&E Home Remodeling',
-    heroFlag: 'GET A FREE 3D DESIGN',
+    heroFlag: 'GET A FREE 3D DESIGN & FREE QUOTE',
     ariaLabel: 'Landscaping Ventura & Santa Barbara, free quote',
     highlights: [
       'Free 3D design for your yard',
@@ -256,7 +241,7 @@ export const SERVICES: Service[] = [
     finalLeadTitle: 'Get Your Free Landscaping 3D Design',
     finalLeadSubtitle:
       "Tell us about your yard. We'll contact you to discuss your project, create your free 3D design, and walk you through financing options if needed.",
-    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN',
+    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN & FREE QUOTE',
     formId: 'l',
     faqs: [
       { q: 'Do you handle drainage?', a: 'Yes. Grading, French drains, and downspout routing are part of every project we build. They are also the part most landscapers skip, so we plan for it up front.' },
@@ -279,11 +264,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: 'Santa Barbara & Ventura ADU Builders',
     heroTitle: 'ADU & Garage Conversion Ventura & Santa Barbara',
     heroSubtitle: 'Get a free 3D design for your ADU or garage conversion.',
-    heroH1: 'FREE 3D DESIGN',
+    heroH1: 'FREE 3D DESIGN · FREE QUOTE',
     heroH2: 'Get a free 3D design for your remodel.',
     heroImage: '/adu/a5o.jpg',
     heroImageAlt: 'ADU & garage conversion project by E&E Home Remodeling',
-    heroFlag: 'GET A FREE 3D DESIGN',
+    heroFlag: 'GET A FREE 3D DESIGN & FREE QUOTE',
     ariaLabel: 'ADU & garage conversion Ventura & Santa Barbara, free quote',
     highlights: [
       'Free 3D design for your project',
@@ -320,7 +305,7 @@ export const SERVICES: Service[] = [
     finalLeadTitle: 'Get Your Free ADU 3D Design',
     finalLeadSubtitle:
       "Tell us about your property. We'll contact you to discuss feasibility, design, and the permit path for your ADU or garage conversion.",
-    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN',
+    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN & FREE QUOTE',
     formId: 'a',
     faqs: [
       { q: 'How long does an ADU permit take?', a: 'Most California jurisdictions are required to approve ADU permits within 60 days. Our team plans the project so the permit path is clear before construction starts.' },
@@ -343,11 +328,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: 'Santa Barbara & Ventura Whole-Home Remodeling',
     heroTitle: 'Whole-Home Remodeling Ventura & Santa Barbara',
     heroSubtitle: 'Get a free 3D design for your whole-home remodel.',
-    heroH1: 'FREE 3D DESIGN',
+    heroH1: 'FREE 3D DESIGN · FREE QUOTE',
     heroH2: 'Get a free 3D design for your remodel.',
     heroImage: '/fullhome/1o.jpg',
     heroImageAlt: 'Whole-home remodel by E&E Home Remodeling',
-    heroFlag: 'GET A FREE 3D DESIGN',
+    heroFlag: 'GET A FREE 3D DESIGN & FREE QUOTE',
     ariaLabel: 'Whole-home remodeling Ventura & Santa Barbara, free quote',
     highlights: [
       'Free 3D design for your remodel',
@@ -366,17 +351,7 @@ export const SERVICES: Service[] = [
       { title: 'Permits & Schedule', body: 'We pull the permits, lock a written schedule, and order materials so the project flows from phase to phase.' },
       { title: 'Build & Walkthrough', body: 'Our crew runs the whole project, protects the rest of the home, and walks you through every detail at completion.' },
     ],
-    gallery: [
-      { src: '/fullhome/1o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/2o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/3o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/4o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/5o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/6o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/7o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/8o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-      { src: '/fullhome/9o.jpg', alt: 'Whole-home remodel by E&E', cap: 'Whole-home remodel - E&E Home Remodeling' },
-    ],
+    gallery: WHOLE_HOUSE_LIVE_GALLERY,
     youtubeId: YOUTUBE_ID,
     videoCaption: 'Whole-Home Remodel by E&E Home Remodeling',
     ctaBandTitle: 'Start Your Whole-Home Remodel',
@@ -384,7 +359,7 @@ export const SERVICES: Service[] = [
     finalLeadTitle: 'Get Your Free Whole-Home 3D Design',
     finalLeadSubtitle:
       "Tell us about your home. We'll contact you to discuss your goals, design the whole project in 3D, and walk you through financing options.",
-    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN',
+    finalLeadFormTitle: 'GET YOUR FREE 3D DESIGN & FREE QUOTE',
     formId: 'w',
     faqs: [
       { q: 'How long does a whole-home remodel take?', a: 'A whole-home remodel typically runs 4 to 9 months depending on scope. We give you a written schedule up front so you can plan around it.' },
