@@ -129,10 +129,10 @@ export default function SiteHeader({ active }: Props) {
           </a>
           <a
             className="btn btn-primary btn-sm"
-            data-short-label="FREE QUOTE"
-            href="#quote"
+            data-short-label="BOOK APPOINTMENT"
+            href="/book-estimate"
           >
-            GET A FREE QUOTE
+            BOOK AN APPOINTMENT
           </a>
         </div>
       </div>

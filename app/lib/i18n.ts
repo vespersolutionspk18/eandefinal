@@ -4,7 +4,7 @@
 export const ES: Record<string, string> = {
   '25+ Years Experience': 'Más de 25 años de experiencia',
   'CALL NOW': 'LLAME AHORA',
-  'GET A FREE QUOTE': 'COTIZACIÓN GRATIS',
+  'BOOK AN APPOINTMENT': 'RESERVE UNA CITA',
   'FREE 3D DESIGN': 'DISEÑO 3D GRATIS',
   'Family Owned': 'Empresa Familiar',
   'Licensed & Insured': 'Con Licencia y Seguro',
@@ -94,8 +94,8 @@ export const DESC_EN = 'Bathroom remodeling in Santa Barbara by E&E Home Remodel
 export const DESC_ES = 'Remodelación de baños en Santa Barbara por E&E Home Remodeling. Obtenga un diseño 3D gratis para su remodelación de baño. Hay opciones de financiamiento de bajo interés. Con licencia y seguro. Llame al (805) 590-0908.';
 
 export const SHORT_LABEL = {
-  en: 'FREE QUOTE',
-  es: 'COTIZACIÓN',
+  en: 'BOOK APPOINTMENT',
+  es: 'RESERVAR CITA',
 };
 
 export function translate(lang: 'en' | 'es', english: string): string {
