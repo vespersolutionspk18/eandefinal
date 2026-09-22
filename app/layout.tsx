@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     images: ['/bathroom/emain.jpg'],
   },
   robots: { index: true, follow: true },
-  icons: { icon: '/favicon.ico' },
+  icons: { icon: '/eelogo.ico' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

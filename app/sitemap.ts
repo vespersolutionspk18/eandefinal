@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/gallery`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${BASE}/book-estimate`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ];
   const servicePages: MetadataRoute.Sitemap = SERVICES.map((s) => ({
     url: `${BASE}${s.href}`,
