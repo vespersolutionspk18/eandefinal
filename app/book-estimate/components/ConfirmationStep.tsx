@@ -19,7 +19,7 @@ function CheckIcon() {
 }
 
 /**
- * STEP 3 — confirmation.
+ * STEP 3: confirmation.
  * Shows the appointment back to the customer in plain language. No database id,
  * no technical detail, no external calendar link.
  */
@@ -35,9 +35,12 @@ export default function ConfirmationStep({ booking, timezoneLabel }: Props) {
       <span aria-hidden="true" className="bk-check">
         <CheckIcon />
       </span>
-      <h2 className="bk-heading bk-heading-center">Your estimate is booked.</h2>
+      <h2 className="bk-heading bk-heading-center">
+        Your in-house consultation session has been booked.
+      </h2>
       <p className="bk-lede bk-lede-center">
-        We&apos;ll see you then. If anything changes, call us at {PHONE_DISPLAY} and we&apos;ll move it.
+        We&apos;ve added your visit to the calendar. We&apos;ll see you at your property on the
+        date and time above.
       </p>
 
       <dl className="bk-details">
