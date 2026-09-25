@@ -3,6 +3,7 @@ import { Open_Sans, Roboto_Condensed } from 'next/font/google';
 import './globals.css';
 import GTag from './components/GTag';
 import LanguageProvider from './components/LanguageProvider';
+import MetaPixel from './components/MetaPixel';
 import PhoneTracker from './components/PhoneTracker';
 
 const openSans = Open_Sans({
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <GTag />
+        <MetaPixel />
         <PhoneTracker />
         <LanguageProvider />
       </body>
